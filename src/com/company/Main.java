@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Random;
+
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
@@ -11,17 +13,17 @@ public class Main {
         // анонимный класс
 
         //new MyThread("+").start();
-
         MyThread t1 = new MyThread("+");
         t1.start();
         MyThread t2 = new MyThread("-");
         t2.start();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         t1.flag = false;
         test("1 stopped!");
         t1.join(); // ждет завершение потока - требуется время
         test("Fact 1 stopped!");
 
+        // volatile - переменная доступная для изменения в потоке
 
    // [-][+][-][+]
     }
